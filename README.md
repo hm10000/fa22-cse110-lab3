@@ -1,3 +1,3 @@
-# Lab 2 - Starter
+# fa22-cse110-lab3
 
-Github Publish URL: https://hm10000.github.io/Lab2_Starter/
+URL: https://hm10000.github.io/fa22-cse110-lab3/
