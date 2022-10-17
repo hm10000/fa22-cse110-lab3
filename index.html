@@ -4,30 +4,29 @@
     <title>First Brainstorm</title>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/x-icon" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="external.css" />
   </head>
   <style>
-    *.p {
+    *.div {
       color: white;
       font-size: 1.5rem;
     }
-    body {
-      background-color: rgb(24, 22, 22);
-      font-size: 20px;
-      margin-top: 50px;
-      margin-bottom: 50px;
-      margin-left: 50px;
-      margin-right: 50px;
-    }
     h1 {
+      font-family: "preconnect", sans-serif;
       border-style: solid;
       border-color: yellowgreen;
+      border-width: thin;
+      border-radius: 30px;
       padding-top: 5px;
       padding-bottom: 5px;
       padding-left: 5px;
       padding-right: 5px;
+      text-align: center;
       color: rgba(72, 122, 180, 0.7);
     }
     h2 {
+      display: inline;
       padding: 5px 5px 5px 5px;
       color: #ffa49e;
     }
@@ -35,10 +34,15 @@
       color: hsl(161, 54%, 73%);
     }
     li {
+      max-width: 100px;
+      min-width: 10px;
       color: orange;
       font-size: 0.45cm;
+      font-size: 3vh;
     }
     form {
+      height: 20px;
+      width: 50px;
       color: white;
       font-size: 0.25in;
     }
@@ -47,12 +51,60 @@
       font-size: 1.2em;
       margin: auto;
     }
+    details > summary {
+      color: lightskyblue;
+      font-size: 20px;
+      margin: auto;
+    }
     section,
     div,
     p {
       color: white;
-      font-size: 1.2vw;
       margin: 50px 50px 50px 5px;
+    }
+
+    .googleLink {
+      font-size: 30px;
+    }
+    .googleLink:hover {
+      background-color: yellow;
+    }
+    #fname {
+      background-color: hsl(161, 54%, 73%);
+    }
+
+    a[target] {
+      color: rgba(62, 122, 180, 0.7);
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+    main {
+      display: grid;
+      grid-template-columns: auto;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+    }
+
+    main .attendance {
+      color: rgba(222, 231, 211, 0.7);
+    }
+
+    .attendance ~ .agenda {
+      color: rgba(91, 96, 110, 0.7);
+    }
+    section + ul {
+      color: #ffa49e;
+    }
+    @media only screen and (max-width: 600px) {
+      body {
+        background-color: lightblue;
+      }
+    }
+    a:active {
+      background-color: coral;
     }
   </style>
   <body>
@@ -63,22 +115,22 @@
       <hr />
     </header>
     <nav>
-      <a href="http://www.youtube.com">youtube link</a>
+      <a href="http://www.youtube.com" target="_blank">youtube link</a>
     </nav>
     <main>
-      <div><b>Attendance List</b></div>
+      <div class="attendance"><b>Attendance List</b></div>
       <ol>
         <li><i>Jack</i></li>
         <li><i>Alex</i></li>
         <li><i>Lucas</i></li>
         <li><em>Michael</em></li>
       </ol>
-      <div><strong>Agenda</strong></div>
+      <div class="agenda"><strong>Agenda</strong></div>
       <div>
         <span>We're going to brainstorm for the project</span>
       </div>
       <div>
-        <p>
+        <p style="text-decoration: underline">
           <strong
             >Things that were unfinished business from last meeting</strong
           >
@@ -99,7 +151,12 @@
       </ul>
       <p>
         If you want to search, use
-        <a href="https://www.google.com"><b>google</b></a>
+        <a
+          href="https://www.google.com"
+          style="display: block"
+          class="googleLink"
+          ><b>google</b></a
+        >
       </p>
       <details>
         <summary>
@@ -131,7 +188,7 @@
           <input type="text" id="fname" name="fname" /><br /><br />
           <label for="lname">Last name:</label>
           <input type="text" id="lname" name="lname" /><br /><br />
-          <label for="email">Email:</label>
+          <label for="email" class="email">Email:</label>
           <input type="email" id="email" name="email" /><br /><br />
           <label for="location">Where are from:</label>
           <input list="locations" name="location" id="location" />
